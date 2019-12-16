@@ -4,7 +4,6 @@ fi
 
 i=1
 while [ $i -lt 5 ]; do
-    # content=$(printf "HTTP/1.1 200 OK\r\nContent-Length: %d\r\n\r\n%s" "$(printf "$(handler/index.sh)" | wc -c)" "$(handler/index.sh)")
     {
         printf "HTTP/1.0 200 OK\r\n"
         while read line; do

@@ -17,11 +17,13 @@ Or you can `curl localhost`
 
 ## Todo
 
-- [x] web container
-
+- [x] web server
 - [ ] page rendering
 - [ ] routing
 - [ ] consider architecture
+
+## Note
+Notable knowledge about the implementation process is placed in `notes.md`.
 
 ## License
 
