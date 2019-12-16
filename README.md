@@ -3,7 +3,7 @@ Using shell only to build a web application, based on netcat.
 
 ## Deploy 
 ```bash
-chmod +x dispatcher.sh
+chmod +x dispatcher.sh handler/*
 ```
 
 ## Run
@@ -12,15 +12,16 @@ To run the server:
 ./dispatcher.sh
 ```
 
-To run a client, you can open a browser and just go `http://localhost`.
+To run a client, you can open a browser and just go `http://localhost`.  
 Or you can `curl localhost`
 
-
 ## Todo
-- web container
-- page rendering
-- routing
-- consider architecture
+
+- [x] web container
+
+- [ ] page rendering
+- [ ] routing
+- [ ] consider architecture
 
 ## License
 
