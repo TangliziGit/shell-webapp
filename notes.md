@@ -9,3 +9,4 @@
     read pipe中的header, 调用对应的handler, 获得response body
     计算response body大小, 并输出
 ```
+5. 调试shell脚本, 用`bash -x xxx.sh`

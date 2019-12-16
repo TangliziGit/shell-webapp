@@ -3,7 +3,7 @@ Using shell only to build a web application, based on netcat.
 
 ## Deploy 
 ```bash
-chmod +x dispatcher.sh handler/*
+chmod +x dispatcher.sh handler/* render/*
 ```
 
 ## Run
@@ -18,7 +18,7 @@ Or you can `curl localhost`
 ## Todo
 
 - [x] web server
-- [ ] page rendering
+- [x] page rendering
 - [x] basic logging
 - [x] routing
 - [ ] consider architecture
