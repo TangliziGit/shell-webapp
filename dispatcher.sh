@@ -3,17 +3,18 @@ if test ! -p .pipe; then
 fi
 
 i=1
-while [ $i -lt 5 ]; do
+while [ $i -lt 7 ]; do
     {
-        printf "HTTP/1.0 200 OK\r\n"
         while read line; do
             req="${req}${line}"
             if [[ $(expr length "$line") -lt 2 ]]; then
-                break;
+                break
             fi
-        done < .pipe;
+        done < .pipe
 
         resp="$(handler/header.sh "$req")"
+
+        printf "HTTP/1.0 200 OK\r\n"
         printf "Content-Length: %d\r\n\r\n" "$(echo -n $resp | wc -c)"
         printf "$resp"
     } | sudo nc -clvp 80 > .pipe
