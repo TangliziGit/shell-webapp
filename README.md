@@ -19,7 +19,8 @@ Or you can `curl localhost`
 
 - [x] web server
 - [ ] page rendering
-- [ ] routing
+- [x] basic logging
+- [x] routing
 - [ ] consider architecture
 
 ## Note

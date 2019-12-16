@@ -10,13 +10,22 @@ i=1
 while [ $i -lt 7 ]; do
     {
         while read line; do
+            if [[ $req == "" ]]; then 
+                uri=$(echo $line | grep -o '/[^ ]*' | head -1)
+            fi
             req="${req}${line}"
             if [[ $(expr length "$line") -lt 2 ]]; then
                 break
             fi
         done < .pipe
 
-        resp="$(handler/header.sh "$req")"
+        if test -e "handler$uri.sh"; then 
+            resp="$(handler$uri.sh "$req")"
+        elif test -e "resource$uri"; then
+            resp="$(cat resource$uri)"
+        else
+            resp="$(cat resource/404.html)"
+        fi
 
         printf "HTTP/1.0 200 OK\r\n"
         printf "Content-Length: %d\r\n\r\n" "$(echo -n $resp | wc -c)"
