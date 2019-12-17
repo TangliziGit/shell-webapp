@@ -11,3 +11,4 @@
 ```
 5. 调试shell脚本, 用`bash -x xxx.sh`
 6. 为了使用`Ctrl-C`退出循环, 我们需要做指令和信号的绑定`trap break INT`
+7. 有文件访问漏洞

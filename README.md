@@ -23,6 +23,7 @@ Or you can `curl localhost`
 - [x] routing
 - [ ] forward
 - [ ] custom HTTP header
+- [ ] basic secure
 
 ## Note
 Notable knowledge about the implementation process is placed in `notes.md`.
