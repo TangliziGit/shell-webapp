@@ -6,12 +6,15 @@ if test ! -p .pipe; then
     mkfifo .pipe
 fi
 
-i=1
-while [ $i -lt 7 ]; do
+trap break INT
+while true; do
     {
         while read line; do
             if [[ $req == "" ]]; then 
                 uri=$(echo $line | grep -o '/[^ ]*' | head -1)
+                if [ "$uri" == "/" ]; then
+                    uri="/index"
+                fi
             fi
             req="${req}${line}"
             if [[ $(expr length "$line") -lt 2 ]]; then
@@ -19,9 +22,9 @@ while [ $i -lt 7 ]; do
             fi
         done < .pipe
 
-        if test -e "handler$uri.sh"; then 
+        if test -f "handler$uri.sh"; then 
             resp="$(handler$uri.sh "$req")"
-        elif test -e "resource$uri"; then
+        elif test -f "resource$uri"; then
             resp="$(cat resource$uri)"
         else
             resp="$(cat resource/404.html)"

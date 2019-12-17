@@ -21,7 +21,8 @@ Or you can `curl localhost`
 - [x] page rendering
 - [x] basic logging
 - [x] routing
-- [ ] consider architecture
+- [ ] forward
+- [ ] custom HTTP header
 
 ## Note
 Notable knowledge about the implementation process is placed in `notes.md`.

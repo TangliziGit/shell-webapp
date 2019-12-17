@@ -10,3 +10,4 @@
     计算response body大小, 并输出
 ```
 5. 调试shell脚本, 用`bash -x xxx.sh`
+6. 为了使用`Ctrl-C`退出循环, 我们需要做指令和信号的绑定`trap break INT`
