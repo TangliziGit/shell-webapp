@@ -26,19 +26,17 @@ while true; do
             resp="$(handler$uri.sh "$req")"
         elif test -f "resource$uri"; then
             resp="$(cat resource$uri)"
+            resp="$(util/build.sh "HTTP/1.0 200 OK" "$resp")"
         else
             resp="$(cat resource/404.html)"
+            resp="$(util/build.sh "HTTP/1.0 404 Not Found" "$resp")"
         fi
 
-        printf "HTTP/1.0 200 OK\r\n"
-        printf "Content-Length: %d\r\n\r\n" "$(echo -n $resp | wc -c)"
         printf "$resp"
 
         log "$req" "req.log"
         log "$resp" "resp.log"
 
     } | sudo nc -clvp 80 > .pipe
-
-    i=$(( $i+1 ))
 done
 

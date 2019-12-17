@@ -3,7 +3,7 @@ Using shell only to build a web application, based on netcat.
 
 ## Deploy 
 ```bash
-chmod +x dispatcher.sh handler/* render/*
+chmod +x dispatcher.sh handler/* render/* util/*
 ```
 
 ## Run
@@ -21,8 +21,9 @@ Or you can `curl localhost`
 - [x] page rendering
 - [x] basic logging
 - [x] routing
-- [ ] forward
-- [ ] custom HTTP header
+- [ ] forward and redirect
+- [x] custom HTTP header
+- [ ] HTTP status table
 - [ ] basic secure
 
 ## Note
