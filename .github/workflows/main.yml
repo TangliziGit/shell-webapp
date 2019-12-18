@@ -17,5 +17,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install bats
       run: npm install -g bats
-    - name: bats test handlers
-      run: bats test/testHandlers.bats
+    - name: test handlers
+      run: bats -p test/testHandlers.bats
