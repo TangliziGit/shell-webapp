@@ -1,1 +1,1 @@
-render/html.sh template
+render/html template

@@ -21,9 +21,12 @@ Or you can `curl localhost`
 - [x] page rendering
 - [x] basic logging
 - [x] routing
-- [ ] forward and redirect
+- [x] forward and redirect
 - [x] custom HTTP header
 - [x] HTTP status table
+- [ ] CI/CD
+- [ ] README: explain how it works
+- [ ] learn how to write shell
 - [ ] basic secure
 
 ## Note

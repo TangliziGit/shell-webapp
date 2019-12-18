@@ -6,4 +6,4 @@ for key in `grep -oP "(?<=##)\w+(?=##)" $name`; do
     content="$(printf "$content" | sed "s/##$key##/$value/g")"
 done
 
-util/build.sh 200 "$content"
+util/build 200 '' "$content"

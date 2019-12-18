@@ -1,0 +1,9 @@
+resp="$(util/status $1)\r\n"
+if [ "$2" != "" ]; then 
+    resp="$(printf "%s%s\r\n" "$resp" "$2")"
+fi
+if [ "$3" != "" ]; then
+    resp="$(printf "%sContent-Length: %d\r\n\r\n%s" "$resp" "$(echo -n $3 | wc -c)" "$3" )"
+fi
+
+printf "$resp"

@@ -1,5 +1,6 @@
 function log() {
-    printf "$1\n\n" | sed -u 's//\n/g' >> $2
+    # printf "$1\n\n" | sed -u 's//\n/g' >> $2
+    printf "$1\n\n" >> $2
 }
 
 if test ! -p .pipe; then
@@ -26,10 +27,10 @@ while true; do
             resp="$(handler$uri.sh "$req")"
         elif test -f "resource$uri"; then
             resp="$(cat resource$uri)"
-            resp="$(util/build.sh 200 "$resp")"
+            resp="$(util/build 200 '' "$resp")"
         else
             resp="$(cat resource/404.html)"
-            resp="$(util/build.sh 404 "$resp")"
+            resp="$(util/build 404 '' "$resp")"
         fi
 
         printf "$resp"
