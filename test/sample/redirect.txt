@@ -1,0 +1,3 @@
+HTTP/1.0 302 Moved Temporarily
+Location: /index
+

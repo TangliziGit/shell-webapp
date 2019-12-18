@@ -1,0 +1,12 @@
+HTTP/1.0 200 OK
+Content-Length: 727
+
+GET /forward HTTP/1.0
+Host: localhost
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:69.0) Gecko/20100101 Firefox/69.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cookie: Idea-bb8cc7a4=a3d80033-3365-4416-9b49-c42e0d20656b; Webstorm-7bf8cf40=e879472f-271e-4ab3-9399-99c685c383ce; Pycharm-78271a2b=9e2faff3-25b5-4198-8ac6-9ca1f5b9567c; username-localhost-8888="2|1:0|10:1576420138|23:username-localhost-8888|44:M2YxYzI5YmZiNjJhNDgwNWFlZjdkNTI4NDdkNGZmM2E=|583ee9e17f37061261b1a0cb3e8afd48660b9b0c8b3131417eedba338baccc92"; _xsrf=2|5833dd08|5c1d77d9efc077b462af7d0b63bc6a51|1575456273
+Upgrade-Insecure-Requests: 1
