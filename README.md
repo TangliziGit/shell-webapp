@@ -23,7 +23,7 @@ Or you can `curl localhost`
 - [x] routing
 - [ ] forward and redirect
 - [x] custom HTTP header
-- [ ] HTTP status table
+- [x] HTTP status table
 - [ ] basic secure
 
 ## Note

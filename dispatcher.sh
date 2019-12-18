@@ -26,10 +26,10 @@ while true; do
             resp="$(handler$uri.sh "$req")"
         elif test -f "resource$uri"; then
             resp="$(cat resource$uri)"
-            resp="$(util/build.sh "HTTP/1.0 200 OK" "$resp")"
+            resp="$(util/build.sh 200 "$resp")"
         else
             resp="$(cat resource/404.html)"
-            resp="$(util/build.sh "HTTP/1.0 404 Not Found" "$resp")"
+            resp="$(util/build.sh 404 "$resp")"
         fi
 
         printf "$resp"
