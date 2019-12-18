@@ -3,13 +3,13 @@ Using shell only to build a web application, based on netcat.
 
 ## Deploy 
 ```bash
-chmod +x dispatcher.sh handler/* render/* util/*
+chmod +x dispatcher handler/* render/* util/*
 ```
 
 ## Run
 To run the server:
 ```bash
-./dispatcher.sh
+./dispatcher
 ```
 
 To run a client, you can open a browser and just go `http://localhost`.  
@@ -18,7 +18,7 @@ Or you can `curl localhost`
 ## Unit Test
 Requires [bats](https://github.com/bats-core/bats-core) to process unit testing.
 ```bash
-bats test/*.sh
+bats test/*.bats
 ```
 
 ## Todo
@@ -31,7 +31,8 @@ bats test/*.sh
 - [x] custom HTTP header
 - [x] HTTP status table
 - [x] unit testing for handlers
-- [ ] CI/CD
+- [x] CI
+- [ ] CD
 - [ ] README: explain how it works
 - [ ] learn how to write shell
 - [ ] basic secure

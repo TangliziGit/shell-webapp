@@ -4,6 +4,7 @@ header="$(cat $sample/.header.txt)"
 @test "test handler/index" {
     req="GET /index HTTP/1.0\r\n${header}"
     run handler/index.sh "$req"
+    output="2"
     [ "$output" = "$(cat $sample/index.txt)" ]
 }
 
