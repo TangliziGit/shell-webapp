@@ -18,4 +18,4 @@ jobs:
     - name: npm install bats
       run: npm install -g bats
     - name: test handlers
-      run: bats -p test/testHandlers.bats
+      run: bats test/testHandlers.bats
