@@ -1,4 +1,4 @@
-FROM archlinux:latest
+FROM archlinux:20191205
 
 RUN pacman -Sy --noconfirm gnu-netcat
 
