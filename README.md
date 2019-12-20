@@ -7,7 +7,7 @@ docker pull tanglizi/shell-webapp
 docker run --name shell-webapp -p 8080:8080 -d tanglizi/shell-webapp
 ```
 
-## Deploy via github  
+## Deploy via source code
 ```bash
 git clone https://github.com/TangliziGit/shell-webapp.git
 cd shell-webapp
@@ -40,8 +40,7 @@ bats test/*.bats
 - [x] HTTP status table
 - [x] unit testing for handlers
 - [x] docker
-- [x] CI
-- [ ] CD
+- [x] CI/CD on shell scripts, and Dockerfile lint & build
 - [ ] README: explain how it works
 - [ ] learn how to write shell
 - [ ] basic secure
