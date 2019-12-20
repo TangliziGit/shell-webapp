@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if test ! -p .pipe; then
     mkfifo .pipe
 fi
@@ -5,20 +7,17 @@ fi
 trap break INT
 while true; do
     {
-        while read line; do
-            if [[ $req == "" ]]; then 
-                uri=$(echo $line | grep -o '/[^ ]*' | head -1)
-                if [ "$uri" == "/" ]; then
-                    uri="/index"
-                fi
-            fi
+        read req < .pipe
+        uri=$(echo $req | grep -o '/[^ ]*' | head -1)
+        if [ "$uri" == "/" ]; then
+            uri="/index"
+        fi
+
+        while read -t 0.5 line; do
             req="${req}${line}"
-            if [[ $(expr length "$line") -lt 2 ]]; then
-                break
-            fi
         done < .pipe
 
-        if test -f "handler$uri.sh"; then 
+        if test -f "handler$uri.sh"; then
             resp="$(handler$uri.sh "$req")"
         elif test -f "resource$uri"; then
             resp="$(cat resource$uri)"
@@ -33,6 +32,5 @@ while true; do
         util/log "$req" "req.log"
         util/log "$resp" "resp.log"
 
-    } | sudo nc -clvp 80 > .pipe
+    } | nc -lvp $1 > .pipe
 done
-

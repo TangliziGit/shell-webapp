@@ -1,8 +1,16 @@
 # shell-webapp
 Using shell only to build a web application, based on netcat. 
 
-## Deploy 
+## Deploy via docker  
 ```bash
+docker pull tanglizi/shell-webapp  
+docker run --name shell-webapp -p 8080:8080 -d tanglizi/shell-webapp
+```
+
+## Deploy via github  
+```bash
+git clone https://github.com/TangliziGit/shell-webapp.git
+cd shell-webapp
 chmod +x dispatcher handler/* render/* util/*
 ```
 
@@ -31,6 +39,7 @@ bats test/*.bats
 - [x] custom HTTP header
 - [x] HTTP status table
 - [x] unit testing for handlers
+- [x] docker
 - [x] CI
 - [ ] CD
 - [ ] README: explain how it works
