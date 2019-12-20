@@ -11,17 +11,17 @@ docker run --name shell-webapp -p 8080:8080 -d tanglizi/shell-webapp
 ```bash
 git clone https://github.com/TangliziGit/shell-webapp.git
 cd shell-webapp
-chmod +x dispatcher handler/* render/* util/*
+chmod +x dispatcher.sh handler/* render/* util/*
 ```
 
 ## Run
 To run the server:
 ```bash
-./dispatcher
+./dispatcher.sh 8080
 ```
 
-To run a client, you can open a browser and just go `http://localhost`.  
-Or you can `curl localhost`
+To run a client, you can open a browser and just go `http://localhost:8080`.  
+Or you can `curl localhost:8080`
 
 ## Unit Test
 Requires [bats](https://github.com/bats-core/bats-core) to process unit testing.
