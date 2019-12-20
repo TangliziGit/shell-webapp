@@ -1,0 +1,20 @@
+name: Docker Lint & Build
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        name: ["tanglizi/shell-webapp"]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Docker Lint
+      uses: luke142367/Docker-Lint-Action@v1.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Docker Build
+      run: docker build -t ${{ matrix.name }}:latest .
