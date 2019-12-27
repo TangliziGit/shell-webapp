@@ -1,1 +1,2 @@
-util/build 200 '' "$@"
+#!/bin/bash
+../util/build 200 '' "$@"

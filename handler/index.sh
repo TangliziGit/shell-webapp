@@ -1,1 +1,2 @@
-render/html template
+#!/bin/bash
+../render/html template

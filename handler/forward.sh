@@ -1,1 +1,1 @@
-handler/header.sh "$@"
+../handler/header.sh "$@"
